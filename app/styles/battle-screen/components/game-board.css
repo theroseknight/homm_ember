@@ -1,0 +1,9 @@
+.game-board-main {
+  width: 100%;
+  height: 660px;
+  position: relative;
+}
+
+.game-board-main > .game-board-first-row {
+  margin-top: 125px;
+}

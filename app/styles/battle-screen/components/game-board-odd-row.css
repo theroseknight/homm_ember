@@ -1,0 +1,12 @@
+.game-board-odd-row {
+  clear: left;
+  width: 1200px;
+  height: 45px;
+  padding-left: 52px;
+}
+
+.hex-holder {
+  height: 60px;
+  width: 810px;
+  margin: auto;
+}

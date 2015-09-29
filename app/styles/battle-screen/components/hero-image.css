@@ -1,0 +1,17 @@
+.hero-observer-image {
+  position: absolute;
+  top: -125px;
+}
+
+.hero-image-left {
+  left: 80px;
+}
+
+.hero-image-right {
+  right: 80px;
+}
+
+.hero-observer-image > img {
+  width: 100px;
+  height: auto;
+}

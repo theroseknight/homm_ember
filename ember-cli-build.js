@@ -19,5 +19,18 @@ module.exports = function(defaults) {
   // please specify an object with the list of modules as keys
   // along with the exports of each module as its value.
 
+  app.import('bower_components/bootstrap/dist/css/bootstrap.css');
+  app.import('bower_components/components-font-awesome/css/font-awesome.css');
+  app.import('bower_components/bootstrap/dist/js/bootstrap.js');
+  app.import('app/styles/app.css');
+  app.import('vendor/custom-utilities.js');
+
+  app.import('app/styles/battle-screen/general.css');
+  app.import('app/styles/battle-screen/components/game-board.css');
+  app.import('app/styles/battle-screen/components/game-board-even-row.css');
+  app.import('app/styles/battle-screen/components/game-board-odd-row.css');
+  app.import('app/styles/battle-screen/components/game-board-hexagon.css');
+  app.import('app/styles/battle-screen/components/hero-image.css');
+
   return app.toTree();
 };

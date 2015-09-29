@@ -1,0 +1,38 @@
+#bs-background {
+  width: 100%;
+  height: 100%;
+  background: url(../../oversized-window-paneling.jpg) no-repeat center center fixed;
+  background-size: cover;
+}
+
+#bs-fixed-size-background {
+  width: 1200px;
+  height: 834px;
+  margin: 0px auto;
+  background: url(../../battle_background.png) no-repeat center;
+
+}
+
+#background-flavor-image {
+  position: absolute;
+  z-index: 100;
+  height: 10%;
+  width: 100%;
+}
+
+#battle-screen-main-portion {
+  width: 100%;
+  height: 80%;
+}
+
+#battle-screen-footer-portion {
+  width: 100%;
+  height: 20%;
+}
+
+
+#battle-screen-game-board {
+  height: 80%;
+  width: 100%;
+  float: left;
+}

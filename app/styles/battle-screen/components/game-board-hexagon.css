@@ -1,0 +1,30 @@
+.game-board-hexagon {
+    float: left;
+    margin-left: 1px;
+    margin-bottom: -13px;
+}
+.game-board-hexagon .top {
+    width: 0;
+    border-bottom: 15px solid black;
+    border-left: 26px solid transparent;
+    border-right: 26px solid transparent;
+}
+.game-board-hexagon .middle {
+    width: 52px;
+    height: 30px;
+    background: black;
+}
+.game-board-hexagon .bottom {
+    width: 0;
+    border-top: 15px solid black;
+    border-left: 26px solid transparent;
+    border-right: 26px solid transparent;
+}
+
+.game-board-hexagon {
+  opacity: .4;
+}
+
+.game-board-hexagon:hover {
+  opacity: 1
+}
