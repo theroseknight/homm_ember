@@ -31,6 +31,7 @@ module.exports = function(defaults) {
   app.import('app/styles/battle-screen/components/game-board-odd-row.css');
   app.import('app/styles/battle-screen/components/game-board-hexagon.css');
   app.import('app/styles/battle-screen/components/hero-image.css');
+  app.import('app/styles/battle-screen/components/army-on-tile.css');
 
   return app.toTree();
 };

@@ -11,5 +11,7 @@ export default DS.Model.extend({
   hp:attr(),
   speed:attr(),
   cost:attr(),
-  special:attr()
+  special:attr(),
+  imageUrl:attr(),
+  stackSize:attr()
 });

@@ -1,0 +1,26 @@
+.army-battle-image {
+  opacity: 1;
+  position: absolute;
+  z-index: 100;
+  top: -50px;
+}
+
+.army-on-tile {
+  position: absolute;
+}
+
+.troop-size-container {
+  position: absolute;
+  left: 50px;
+  top: 20px;
+  text-align: center;
+  background-color: purple;
+  color: white;
+  border-width: 2px;
+  border-style: solid;
+  border-color: gold;
+}
+
+.troop-size {
+  margin: 0px;
+}

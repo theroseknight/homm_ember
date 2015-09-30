@@ -1,4 +1,6 @@
 export function initialize(container, application) {
+  application.inject('component', 'store', 'service:store');
+
   application.inject('component', 'battleService', 'service:battle-service');
   application.inject('route', 'battleService', 'service:battle-service');
   application.inject('controller', 'battleService', 'service:battle-service');

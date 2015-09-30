@@ -2,6 +2,7 @@
     float: left;
     margin-left: 1px;
     margin-bottom: -13px;
+    position: relative;
 }
 .game-board-hexagon .top {
     width: 0;
@@ -21,10 +22,18 @@
     border-right: 26px solid transparent;
 }
 
-.game-board-hexagon {
+.hexagon-toggle-on .hexagon-holder {
   opacity: .4;
 }
 
-.game-board-hexagon:hover {
-  opacity: 1
+.hexagon-toggle-off .hexagon-holder {
+  opacity: 0;
+}
+
+.hexagon-toggle-on .hexagon-holder:hover {
+  opacity: 1;
+}
+
+.hexagon-toggle-off .hexagon-holder:hover {
+  opacity: 1;
 }

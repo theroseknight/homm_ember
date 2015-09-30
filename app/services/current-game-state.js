@@ -17,7 +17,7 @@ export default Ember.Service.extend({
 
     }
   }.property(""),
-
+  showHexagon:null,
   refreshDefeaterPosition:null,
   onLoginScreen:false,
   onMainScreen:false,
@@ -34,12 +34,11 @@ export default Ember.Service.extend({
   }),
   refreshDefeaterObserver:Ember.observer("refreshDefeaterPosition",function(){
     if(this.get('refreshDefeaterPosition') === "battleScreen"){
-      console.log('hi mom')
       $('body').css("min-width", "1200px");
       $('body').css("min-height", "834px");
     }else{
       $('body').css("min-width", "0px");
       $('body').css("min-height", "0px");
     }
-  })
+  }),  
 });
