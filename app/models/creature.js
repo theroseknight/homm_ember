@@ -13,5 +13,6 @@ export default DS.Model.extend({
   cost:attr(),
   special:attr(),
   imageUrl:attr(),
-  stackSize:attr()
+  stackSize:attr(),
+  
 });

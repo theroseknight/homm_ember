@@ -16,6 +16,17 @@ export default Ember.Component.extend({
       return "";
     }
   }.property(''),
+  derp:function(){
+    if(this.get('rowId')===1 && this.get('columnId')===1){
+      hitSixAnimations(this,"pikeman");
+    }else if(this.get('rowId')===3 && this.get('columnId')===1){
+      deathEightAnimations(this,"griffon");
+    }else if(this.get('rowId')===4 && this.get('columnId')===1){
+      attackSevenAnimations(this,"swordsman");
+    }else{
+      return "";
+    }
+  }.on('init'),
   stackSize:function(){
     if(this.get('rowId')===1 && this.get('columnId')===1){
       return this.get('battleService').get('leftArmySizeOne');
@@ -28,6 +39,9 @@ export default Ember.Component.extend({
     }else{
       return "";
     }
+  }.property(''),
+  imageUrls:function(){
+    return ["1.png","2.png", "3.png", "4.png", "5.png", "6.png"];
   }.property(''),
   actions:{
 

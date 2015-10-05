@@ -24,6 +24,7 @@ module.exports = function(defaults) {
   app.import('bower_components/bootstrap/dist/js/bootstrap.js');
   app.import('app/styles/app.css');
   app.import('vendor/custom-utilities.js');
+  app.import('vendor/battle-animations.js');
 
   app.import('app/styles/battle-screen/general.css');
   app.import('app/styles/battle-screen/components/game-board.css');
