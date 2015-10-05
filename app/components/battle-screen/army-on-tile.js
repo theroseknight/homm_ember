@@ -12,6 +12,8 @@ export default Ember.Component.extend({
       return this.get('battleService').get('leftArmyImageThree');
     }else if(this.get('rowId')===4 && this.get('columnId')===1){
       return this.get('battleService').get('leftArmyImageFour');
+    }else if(this.get('rowId')===5 && this.get('columnId')===1){
+      return this.get('battleService').get('leftArmyImageFive');
     }else{
       return "";
     }
@@ -23,6 +25,16 @@ export default Ember.Component.extend({
       deathEightAnimations(this,"griffon");
     }else if(this.get('rowId')===4 && this.get('columnId')===1){
       attackSevenAnimations(this,"swordsman");
+    }else if(this.get('rowId')===5 && this.get('columnId')===1){
+      moveSixAnimations(this,"swordsman",1);
+    }else if(this.get('rowId')===5 && this.get('columnId')===2){
+      moveSixAnimations(this,"swordsman",2);
+    }else if(this.get('rowId')===5 && this.get('columnId')===3){
+      moveSixAnimations(this,"swordsman",3);
+    }else if(this.get('rowId')===5 && this.get('columnId')===4){
+      moveSixAnimations(this,"swordsman",4);
+    }else if(this.get('rowId')===5 && this.get('columnId')===5){
+      moveSixAnimations(this,"swordsman",5);
     }else{
       return "";
     }

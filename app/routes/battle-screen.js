@@ -32,13 +32,14 @@ export default Ember.Route.extend({
     var leftArmyTwo = creatureImageUrlArray[1]
     var leftArmyThree = creatureImageUrlArray[2]
     var leftArmyFour = creatureImageUrlArray[3]
+    var leftArmyFive = creatureImageUrlArray[4]
 
     var leftStackOne = creatureSizeArray[0]
     var leftStackTwo = creatureSizeArray[1]
     var leftStackThree = creatureSizeArray[2]
     var leftStackFour = creatureSizeArray[3]
+    var leftStackFive = creatureSizeArray[4]
 
-    console.log(leftArmyOne)
 
     route.get('battleService').set('showHexagon',showHexagon);
     route.get('battleService').set('leftHeroImageUrl',leftHeroImageUrl)
@@ -47,13 +48,19 @@ export default Ember.Route.extend({
     route.get('battleService').set('leftArmyImageTwo',leftArmyTwo)
     route.get('battleService').set('leftArmyImageThree',leftArmyThree)
     route.get('battleService').set('leftArmyImageFour',leftArmyFour)
+    route.get('battleService').set('leftArmyImageFive',leftArmyFive)
 
     route.get('battleService').set('leftArmySizeOne',leftStackOne)
     route.get('battleService').set('leftArmySizeTwo',leftStackTwo)
     route.get('battleService').set('leftArmySizeThree',leftStackThree)
     route.get('battleService').set('leftArmySizeFour',leftStackFour)
+    route.get('battleService').set('leftArmySizeFive',leftStackFive)
 
     console.log(leftStackOne)
+
+    console.log(route.get('battleService').get('leftArmyImageFive'))
+    console.log(leftArmyFive)
+    console.log(creatureImageUrlArray)
 
 
   },
