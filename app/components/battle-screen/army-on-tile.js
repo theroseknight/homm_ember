@@ -14,17 +14,35 @@ export default Ember.Component.extend({
       return this.get('battleService').get('leftArmyImageFour');
     }else if(this.get('rowId')===5 && this.get('columnId')===1){
       return this.get('battleService').get('leftArmyImageFive');
+    }else if(this.get('rowId')===6 && this.get('columnId')===1){
+      return this.get('battleService').get('leftArmyImageSix');
+    }else if(this.get('rowId')===7 && this.get('columnId')===1){
+      return this.get('battleService').get('leftArmyImageSeven');
+    }else if(this.get('rowId')===1 && this.get('columnId')===15){
+      return this.get('battleService').get('rightArmyImageOne');
+    }else if(this.get('rowId')===3 && this.get('columnId')===15){
+      return this.get('battleService').get('rightArmyImageTwo');
+    }else if(this.get('rowId')===5 && this.get('columnId')===15){
+      return this.get('battleService').get('rightArmyImageThree');
+    }else if(this.get('rowId')===6 && this.get('columnId')===15){
+      return this.get('battleService').get('rightArmyImageFour');
+    }else if(this.get('rowId')===7 && this.get('columnId')===15){
+      return this.get('battleService').get('rightArmyImageFive');
+    }else if(this.get('rowId')===9 && this.get('columnId')===15){
+      return this.get('battleService').get('rightArmyImageSix');
+    }else if(this.get('rowId')===11 && this.get('columnId')===15){
+      return this.get('battleService').get('rightArmyImageSeven');
     }else{
       return "";
     }
   }.property(''),
   derp:function(){
     if(this.get('rowId')===1 && this.get('columnId')===1){
-      hitSixAnimations(this,"pikeman");
+      animate(this,"pikeman","hit",6)
     }else if(this.get('rowId')===3 && this.get('columnId')===1){
-      deathEightAnimations(this,"griffon");
+      animate(this,"griffin","death",8);
     }else if(this.get('rowId')===4 && this.get('columnId')===1){
-      attackSevenAnimations(this,"swordsman");
+      animate(this,"swordsman","attack",7);
     }else if(this.get('rowId')===5 && this.get('columnId')===1){
       moveSixAnimations(this,"swordsman",1);
     }else if(this.get('rowId')===5 && this.get('columnId')===2){

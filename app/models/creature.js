@@ -14,5 +14,5 @@ export default DS.Model.extend({
   special:attr(),
   imageUrl:attr(),
   stackSize:attr(),
-  
+  hero:DS.belongsTo("hero",{async:true}),
 });
