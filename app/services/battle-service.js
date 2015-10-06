@@ -7,7 +7,6 @@ export default Ember.Service.extend({
   rightSideCreatures:null,
   showHexagon:null,
   hexOptionObserver:Ember.observer("showHexagon",function(){
-    console.log(this.get('showHexagon'))
     if(this.get('showHexagon') === true){
       $(".game-board-hexagon").addClass("hexagon-toggle-on").removeClass('hexagon-toggle-off');
     }else{
@@ -15,13 +14,9 @@ export default Ember.Service.extend({
     }
   }),
   initiativeArray:function(){
-    console.log('im in the array')
     var leftSideCreatures = this.get('leftSideCreatures');
-    console.log(leftSideCreatures)
     var rightSideCreatures = this.get('rightSideCreatures');
-    console.log(rightSideCreatures)
     var creatures = leftSideCreatures.concat(rightSideCreatures);
-    console.log(creatures)
     // use slice() to copy the array and not just make a reference
     var fastestToSlowest = creatures.slice(0);
 
@@ -29,5 +24,8 @@ export default Ember.Service.extend({
         return b.get('speed') - a.get('speed');
     });
     return fastestToSlowest;
-  }.property('leftSideCreatures','rightSideCreatures')
+  }.property('leftSideCreatures','rightSideCreatures'),
+  displayInitiativeArray:function(){
+    return this.get('initiativeArray').slice(0,10);
+  }.property('inititiaveArray')
 });

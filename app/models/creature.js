@@ -13,6 +13,7 @@ export default DS.Model.extend({
   cost:attr(),
   special:attr(),
   imageUrl:attr(),
+  headshotUrl:attr(),
   stackSize:attr(),
   hero:DS.belongsTo("hero",{async:true}),
 });

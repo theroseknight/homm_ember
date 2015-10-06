@@ -4,7 +4,6 @@ export default Ember.Component.extend({
   classNames:["army-on-tile"],
   imageUrl:function(){
     if(this.get('rowId')===1 && this.get('columnId')===1){
-      console.log(this.get('battleService').get('leftArmyImageOne'))
       return this.get('battleService').get('leftArmyImageOne');
     }else if(this.get('rowId')===2 && this.get('columnId')===1){
       return this.get('battleService').get('leftArmyImageTwo');

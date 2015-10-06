@@ -6,8 +6,9 @@
       </div>
     </div>
     <div id="battle-screen-footer-portion">
-      {{battle-screen/turn-display }}
-      {{battle-screen/options-menu toggleStatus=battleService.showHexagon}}
+      {{battle-screen/turn-slider/main-container }}
     </div>
+    <div {{action "transistionSection" "/" }} class="btn btn-success">Loading Screen</div><br>
+    {{battle-screen/options-menu toggleStatus=battleService.showHexagon}}
   </div>
 </div>
