@@ -5,215 +5,59 @@
 //walk_forward,
 //number: the number of images that we have for the animation
 
-function animate(component,name,type,number){
-  eval("animate" + number)(component,name,type);
+function animate(component,name,type,number,leftOrRight,startingDelay,movementModifier){
+  eval("animatrix")(component,name,type,number,leftOrRight,startingDelay,movementModifier);
 }
 
-function animate2(component,name,type){
-  var urlHeader = "units/" + name + "/";
+function animatrix(component,name,type,number,leftOrRight,startingDelay,movementModifier){
+  console.log(movementModifier)
+  console.log(startingDelay)
+  //Step 1 - Create the URL path to the images that will be cycled through to create the animation
+  var urlHeader;
+  if(leftOrRight==="left"){
+    urlHeader = "units/" + name + "/";
+  }else{
+    urlHeader = "right/units/" + name + "/";
+  }
 
-  Ember.run.later((function() {
-    component.set('imageUrl',urlHeader + name + "_" + type + "/1.png")
-  }), 500);
-  Ember.run.later((function() {
-    component.set('imageUrl',urlHeader + name + "_" + type + "/2.png")
-  }), 600);
-}
+  //Step 2 - For movement animations an incrementing ammount of margin is needed in order to push the image to its starting location on the next hexagon which is 52 pixels wide
+  var startingDelayInner;
+  if(type == "walk_forward"){
+    var arrayOfMovementModifiers = []
+    var incrementer = Math.floor(52 / number);
+    for(i = 0; i < number - 1; i++){
+      arrayOfMovementModifiers.push(incrementer * (i + 1))
+    }
+    arrayOfMovementModifiers.push(52)
+  }
 
-function animate3(component,name,type){
-  var urlHeader = "units/" + name + "/";
 
-  Ember.run.later((function() {
-    component.set('imageUrl',urlHeader + name + "_" + type + "/1.png")
-  }), 500);
-  Ember.run.later((function() {
-    component.set('imageUrl',urlHeader + name + "_" + type + "/2.png")
-  }), 600);
-  Ember.run.later((function() {
-    component.set('imageUrl',urlHeader + name + "_" + type + "/3.png")
-  }), 700);
-}
+  //Step 3 - The starting delay will be set to 500 which is a good increment for animations to sync up and the starting array is needed in order to access a looping index inside of the Ember.run.later that holds its incremented value at the time of function initiation rather than call
 
-function animate4(component,name,type){
-  var urlHeader = "units/" + name + "/";
+  var startingArray = Array(number).join(0).split(0).map(Number.call, Number);
 
-  Ember.run.later((function() {
-    component.set('imageUrl',urlHeader + name + "_" + type + "/1.png")
-  }), 500);
-  Ember.run.later((function() {
-    component.set('imageUrl',urlHeader + name + "_" + type + "/2.png")
-  }), 600);
-  Ember.run.later((function() {
-    component.set('imageUrl',urlHeader + name + "_" + type + "/3.png")
-  }), 700);
-  Ember.run.later((function() {
-    component.set('imageUrl',urlHeader + name + "_" + type + "/4.png")
-  }), 800);
-}
+  //Step 4 - Cycle through the images to create the animation
+  startingArray.forEach(function(object,index){
+    Ember.run.later((function() {
+      var innerNumber = index + 1;
+      var insideNumber = innerNumber;
+      if(type==="walk_forward" && innerNumber === number && innerNumber !== 1){
+        component.set('imageUrl',"blank.png")
+      }else{
+        component.set('imageUrl',urlHeader + name + "_" + type + "/" + innerNumber +".png");
+      }
+      if(type==="walk_forward"){
+        component.set('animationNumber',movementModifier[index]);
+        console.log(component.get('animationNumber'))
+      }
+    }), startingDelay);
+    if(index + 1 === number){
+      console.log("foour")
+    }else{
+      startingDelay += 100;
+    }
 
-function animate5(component,name,type){
-  var urlHeader = "units/" + name + "/";
-
-  Ember.run.later((function() {
-    component.set('imageUrl',urlHeader + name + "_" + type + "/1.png")
-  }), 500);
-  Ember.run.later((function() {
-    component.set('imageUrl',urlHeader + name + "_" + type + "/2.png")
-  }), 600);
-  Ember.run.later((function() {
-    component.set('imageUrl',urlHeader + name + "_" + type + "/3.png")
-  }), 700);
-  Ember.run.later((function() {
-    component.set('imageUrl',urlHeader + name + "_" + type + "/4.png")
-  }), 800);
-  Ember.run.later((function() {
-    component.set('imageUrl',urlHeader + name + "_" + type + "/5.png")
-  }), 900);
-}
-
-function animate6(component,name,type){
-  var urlHeader = "units/" + name + "/";
-
-  Ember.run.later((function() {
-    component.set('imageUrl',urlHeader + name + "_" + type + "/1.png")
-  }), 500);
-  Ember.run.later((function() {
-    component.set('imageUrl',urlHeader + name + "_" + type + "/2.png")
-  }), 600);
-  Ember.run.later((function() {
-    component.set('imageUrl',urlHeader + name + "_" + type + "/3.png")
-  }), 700);
-  Ember.run.later((function() {
-    component.set('imageUrl',urlHeader + name + "_" + type + "/4.png")
-  }), 800);
-  Ember.run.later((function() {
-    component.set('imageUrl',urlHeader + name + "_" + type + "/5.png")
-  }), 900);
-  Ember.run.later((function() {
-    component.set('imageUrl',urlHeader + name + "_" + type + "/6.png")
-  }), 1000);
-}
-
-function animate7(component,name,type){
-  var urlHeader = "units/" + name + "/";
-
-  Ember.run.later((function() {
-    component.set('imageUrl',urlHeader + name + "_" + type + "/1.png")
-  }), 500);
-  Ember.run.later((function() {
-    component.set('imageUrl',urlHeader + name + "_" + type + "/2.png")
-  }), 600);
-  Ember.run.later((function() {
-    component.set('imageUrl',urlHeader + name + "_" + type + "/3.png")
-  }), 700);
-  Ember.run.later((function() {
-    component.set('imageUrl',urlHeader + name + "_" + type + "/4.png")
-  }), 800);
-  Ember.run.later((function() {
-    component.set('imageUrl',urlHeader + name + "_" + type + "/5.png")
-  }), 900);
-  Ember.run.later((function() {
-    component.set('imageUrl',urlHeader + name + "_" + type + "/6.png")
-  }), 1000);
-  Ember.run.later((function() {
-    component.set('imageUrl',urlHeader + name + "_" + type + "/7.png")
-  }), 1100);
-}
-
-function animate8(component,name,type){
-  var urlHeader = "units/" + name + "/";
-
-  Ember.run.later((function() {
-    component.set('imageUrl',urlHeader + name + "_" + type + "/1.png")
-  }), 500);
-  Ember.run.later((function() {
-    component.set('imageUrl',urlHeader + name + "_" + type + "/2.png")
-  }), 600);
-  Ember.run.later((function() {
-    component.set('imageUrl',urlHeader + name + "_" + type + "/3.png")
-  }), 700);
-  Ember.run.later((function() {
-    component.set('imageUrl',urlHeader + name + "_" + type + "/4.png")
-  }), 800);
-  Ember.run.later((function() {
-    component.set('imageUrl',urlHeader + name + "_" + type + "/5.png")
-  }), 900);
-  Ember.run.later((function() {
-    component.set('imageUrl',urlHeader + name + "_" + type + "/6.png")
-  }), 1000);
-  Ember.run.later((function() {
-    component.set('imageUrl',urlHeader + name + "_" + type + "/7.png")
-  }), 1100);
-  Ember.run.later((function() {
-    component.set('imageUrl',urlHeader + name + "_" + type + "/8.png")
-  }), 1200);
-}
-
-function animate9(component,name,type){
-  var urlHeader = "units/" + name + "/";
-
-  Ember.run.later((function() {
-    component.set('imageUrl',urlHeader + name + "_" + type + "/1.png")
-  }), 500);
-  Ember.run.later((function() {
-    component.set('imageUrl',urlHeader + name + "_" + type + "/2.png")
-  }), 600);
-  Ember.run.later((function() {
-    component.set('imageUrl',urlHeader + name + "_" + type + "/3.png")
-  }), 700);
-  Ember.run.later((function() {
-    component.set('imageUrl',urlHeader + name + "_" + type + "/4.png")
-  }), 800);
-  Ember.run.later((function() {
-    component.set('imageUrl',urlHeader + name + "_" + type + "/5.png")
-  }), 900);
-  Ember.run.later((function() {
-    component.set('imageUrl',urlHeader + name + "_" + type + "/6.png")
-  }), 1000);
-  Ember.run.later((function() {
-    component.set('imageUrl',urlHeader + name + "_" + type + "/7.png")
-  }), 1100);
-  Ember.run.later((function() {
-    component.set('imageUrl',urlHeader + name + "_" + type + "/8.png")
-  }), 1200);
-  Ember.run.later((function() {
-    component.set('imageUrl',urlHeader + name + "_" + type + "/9.png")
-  }), 1300);
-}
-
-function animate10(component,name,type){
-  var urlHeader = "units/" + name + "/";
-
-  Ember.run.later((function() {
-    component.set('imageUrl',urlHeader + name + "_" + type + "/1.png")
-  }), 500);
-  Ember.run.later((function() {
-    component.set('imageUrl',urlHeader + name + "_" + type + "/2.png")
-  }), 600);
-  Ember.run.later((function() {
-    component.set('imageUrl',urlHeader + name + "_" + type + "/3.png")
-  }), 700);
-  Ember.run.later((function() {
-    component.set('imageUrl',urlHeader + name + "_" + type + "/4.png")
-  }), 800);
-  Ember.run.later((function() {
-    component.set('imageUrl',urlHeader + name + "_" + type + "/5.png")
-  }), 900);
-  Ember.run.later((function() {
-    component.set('imageUrl',urlHeader + name + "_" + type + "/6.png")
-  }), 1000);
-  Ember.run.later((function() {
-    component.set('imageUrl',urlHeader + name + "_" + type + "/7.png")
-  }), 1100);
-  Ember.run.later((function() {
-    component.set('imageUrl',urlHeader + name + "_" + type + "/8.png")
-  }), 1200);
-  Ember.run.later((function() {
-    component.set('imageUrl',urlHeader + name + "_" + type + "/9.png")
-  }), 1300);
-  Ember.run.later((function() {
-    component.set('imageUrl',urlHeader + name + "_" + type + "/10.png")
-  }), 1400);
+  })
 }
 
 function moveSixAnimations(component,name,position){

@@ -138,7 +138,7 @@ export default Ember.Route.extend({
     theBattleLoop:function(){
       console.log("here we go")
       console.log(this.get('battleService').get('initiativeArray'))
-    },
+    },    
     transistionSection:function(link){
       var route = this;
 

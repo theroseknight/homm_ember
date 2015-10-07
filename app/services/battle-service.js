@@ -6,6 +6,7 @@ export default Ember.Service.extend({
   leftSideCreatures:null,
   rightSideCreatures:null,
   showHexagon:null,
+  arrayOfBattleHexes: [],
   hexOptionObserver:Ember.observer("showHexagon",function(){
     if(this.get('showHexagon') === true){
       $(".game-board-hexagon").addClass("hexagon-toggle-on").removeClass('hexagon-toggle-off');
