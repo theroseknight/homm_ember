@@ -5,13 +5,8 @@
 //walk_forward,
 //number: the number of images that we have for the animation
 
-function animate(component,name,type,number,leftOrRight,startingDelay,movementModifier){
-  eval("animatrix")(component,name,type,number,leftOrRight,startingDelay,movementModifier);
-}
 
-function animatrix(component,name,type,number,leftOrRight,startingDelay,movementModifier){
-  console.log(movementModifier)
-  console.log(startingDelay)
+function animate(component,name,type,number,leftOrRight,startingDelay,movementModifier){
   //Step 1 - Create the URL path to the images that will be cycled through to create the animation
   var urlHeader;
   if(leftOrRight==="left"){
@@ -22,18 +17,19 @@ function animatrix(component,name,type,number,leftOrRight,startingDelay,movement
 
   //Step 2 - For movement animations an incrementing ammount of margin is needed in order to push the image to its starting location on the next hexagon which is 52 pixels wide
   var startingDelayInner;
-  if(type == "walk_forward"){
-    var arrayOfMovementModifiers = []
-    var incrementer = Math.floor(52 / number);
-    for(i = 0; i < number - 1; i++){
-      arrayOfMovementModifiers.push(incrementer * (i + 1))
-    }
-    arrayOfMovementModifiers.push(52)
+  var forwardMovementModifiers;
+  var upDownVertMovementModifiers;
+  var upDownHorMovementModifiers;
+  if(number === 6){
+    forwardMovementModifiers = [8,17,25,34,43,52]
+    upDownVertMovementModifiers = [8,17,25,34,43,52]
+    upDownHorMovementModifiers = [4,8,13,17,21,26]
+  }else if(number === 12){
+    forwardMovementModifiers = [4,8,12,17,21,25,29,34,38,43,47,52]
   }
 
 
-  //Step 3 - The starting delay will be set to 500 which is a good increment for animations to sync up and the starting array is needed in order to access a looping index inside of the Ember.run.later that holds its incremented value at the time of function initiation rather than call
-
+  //Step 3 - The starting array is needed in order to access a looping index inside of the Ember.run.later that holds its incremented value at the time of function initiation rather than call
   var startingArray = Array(number).join(0).split(0).map(Number.call, Number);
 
   //Step 4 - Cycle through the images to create the animation
@@ -47,16 +43,17 @@ function animatrix(component,name,type,number,leftOrRight,startingDelay,movement
         component.set('imageUrl',urlHeader + name + "_" + type + "/" + innerNumber +".png");
       }
       if(type==="walk_forward"){
-        component.set('animationNumber',movementModifier[index]);
-        console.log(component.get('animationNumber'))
+        component.set('animationCss',new Ember.Handlebars.SafeString("margin-" +leftOrRight +":" + forwardMovementModifiers[index] +"px;"));
+        component.set('animationHorNumber',new Ember.Handlebars.SafeString(forwardMovementModifiers[index]));
+        component.set('leftOrRight',new Ember.Handlebars.SafeString(leftOrRight));
       }
     }), startingDelay);
-    if(index + 1 === number){
-      console.log("foour")
+    if(index + 2  === number){
+      //Cut down on the flicker on by slowing down the final animation which sets the blank image to the old tile
+      startingDelay += 110;
     }else{
-      startingDelay += 100;
+      startingDelay += 50;
     }
-
   })
 }
 

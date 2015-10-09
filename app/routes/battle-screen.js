@@ -42,14 +42,16 @@ export default Ember.Route.extend({
     var leftCreatureThree = loadedCreatureArray[2]
     var leftCreatureFour = loadedCreatureArray[3]
     var leftCreatureFive = loadedCreatureArray[4]
+    var leftCreatureSix = loadedCreatureArray[5]
+    var leftCreatureSeven = loadedCreatureArray[6]
 
-    var rightCreatureOne = loadedCreatureArray[0]
-    var rightCreatureTwo = loadedCreatureArray[1]
-    var rightCreatureThree = loadedCreatureArray[2]
-    var rightCreatureFour = loadedCreatureArray[3]
-    var rightCreatureFive = loadedCreatureArray[4]
-    var rightCreatureSix = loadedCreatureArray[5]
-    var rightCreatureSeven = loadedCreatureArray[6]
+    var rightCreatureOne = loadedOpposingArmyArray[0]
+    var rightCreatureTwo = loadedOpposingArmyArray[1]
+    var rightCreatureThree = loadedOpposingArmyArray[2]
+    var rightCreatureFour = loadedOpposingArmyArray[3]
+    var rightCreatureFive = loadedOpposingArmyArray[4]
+    var rightCreatureSix = loadedOpposingArmyArray[5]
+    var rightCreatureSeven = loadedOpposingArmyArray[6]
 
 
     var leftArmyOne = creatureImageUrlArray[0]
@@ -57,6 +59,8 @@ export default Ember.Route.extend({
     var leftArmyThree = creatureImageUrlArray[2]
     var leftArmyFour = creatureImageUrlArray[3]
     var leftArmyFive = creatureImageUrlArray[4]
+    var leftArmySix = creatureImageUrlArray[5]
+    var leftArmySeven = creatureImageUrlArray[6]
 
     var rightArmyOne = opposingArmyImageUrlArray[0]
     var rightArmyTwo = opposingArmyImageUrlArray[1]
@@ -71,6 +75,8 @@ export default Ember.Route.extend({
     var leftStackThree = creatureSizeArray[2]
     var leftStackFour = creatureSizeArray[3]
     var leftStackFive = creatureSizeArray[4]
+    var leftStackSix = creatureSizeArray[5]
+    var leftStackSeven = creatureSizeArray[6]
 
     var rightStackOne = opposingArmySizeArray[0]
     var rightStackTwo = opposingArmySizeArray[1]
@@ -90,6 +96,8 @@ export default Ember.Route.extend({
     route.get('battleService').set('leftArmyImageThree',leftArmyThree);
     route.get('battleService').set('leftArmyImageFour',leftArmyFour);
     route.get('battleService').set('leftArmyImageFive',leftArmyFive);
+    route.get('battleService').set('leftArmyImageSix',leftArmyFour);
+    route.get('battleService').set('leftArmyImageSeven',leftArmyFive);
 
     route.get('battleService').set('rightArmyImageOne',rightArmyOne);
     route.get('battleService').set('rightArmyImageTwo',rightArmyTwo);
@@ -104,12 +112,16 @@ export default Ember.Route.extend({
     route.get('battleService').set('leftArmySizeThree',leftStackThree);
     route.get('battleService').set('leftArmySizeFour',leftStackFour);
     route.get('battleService').set('leftArmySizeFive',leftStackFive);
+    route.get('battleService').set('leftArmySizeFive',leftStackSix);
+    route.get('battleService').set('leftArmySizeSix',leftStackSeven);
 
     route.get('battleService').set('leftCreatureOne',leftCreatureOne);
     route.get('battleService').set('leftCreatureTwo',leftCreatureTwo);
     route.get('battleService').set('leftCreatureThree',leftCreatureThree);
     route.get('battleService').set('leftCreatureFour',leftCreatureFour);
     route.get('battleService').set('leftCreatureFive',leftCreatureFive);
+    route.get('battleService').set('leftCreatureSix',leftCreatureSix);
+    route.get('battleService').set('leftCreatureSeven',leftCreatureSeven);
 
     route.get('battleService').set('rightCreatureOne',rightCreatureOne);
     route.get('battleService').set('rightCreatureTwo',rightCreatureTwo);
@@ -138,7 +150,7 @@ export default Ember.Route.extend({
     theBattleLoop:function(){
       console.log("here we go")
       console.log(this.get('battleService').get('initiativeArray'))
-    },    
+    },
     transistionSection:function(link){
       var route = this;
 

@@ -20,7 +20,7 @@ export default Ember.Controller.extend({
       var animationTwo = {
         name_of_unit:"swordsman",
         type_of_animation:"walk_forward",
-        number_of_frames:6,
+        number_of_frames:12,
         left_or_right: "left",
         row_id: 5,
         column_id: 1,
@@ -33,7 +33,7 @@ export default Ember.Controller.extend({
       var animationThree = {
         name_of_unit:"swordsman",
         type_of_animation:"walk_forward",
-        number_of_frames:6,
+        number_of_frames:12,
         left_or_right: "left",
         row_id: 5,
         column_id: 2,
@@ -46,7 +46,7 @@ export default Ember.Controller.extend({
       var animationFour = {
         name_of_unit:"swordsman",
         type_of_animation:"walk_forward",
-        number_of_frames:6,
+        number_of_frames:12,
         left_or_right: "left",
         row_id: 5,
         column_id: 3,
@@ -59,7 +59,7 @@ export default Ember.Controller.extend({
       var animationFive = {
         name_of_unit:"swordsman",
         type_of_animation:"walk_forward",
-        number_of_frames:6,
+        number_of_frames:12,
         left_or_right: "left",
         row_id: 5,
         column_id: 4,
@@ -72,7 +72,7 @@ export default Ember.Controller.extend({
       var animationSix = {
         name_of_unit:"swordsman",
         type_of_animation:"walk_forward",
-        number_of_frames:6,
+        number_of_frames:12,
         left_or_right: "left",
         row_id: 5,
         column_id: 5,
@@ -85,7 +85,7 @@ export default Ember.Controller.extend({
       var animationSeven = {
         name_of_unit:"swordsman",
         type_of_animation:"walk_forward",
-        number_of_frames:6,
+        number_of_frames:12,
         left_or_right: "left",
         row_id: 5,
         column_id: 6,
@@ -98,7 +98,7 @@ export default Ember.Controller.extend({
       var animationEight = {
         name_of_unit:"swordsman",
         type_of_animation:"walk_forward",
-        number_of_frames:6,
+        number_of_frames:12,
         left_or_right: "left",
         row_id: 5,
         column_id: 7,
@@ -111,7 +111,7 @@ export default Ember.Controller.extend({
       var animationNine = {
         name_of_unit:"swordsman",
         type_of_animation:"walk_forward",
-        number_of_frames:6,
+        number_of_frames:12,
         left_or_right: "left",
         row_id: 5,
         column_id: 8,
@@ -124,7 +124,7 @@ export default Ember.Controller.extend({
       var animationTen = {
         name_of_unit:"swordsman",
         type_of_animation:"walk_forward",
-        number_of_frames:6,
+        number_of_frames:12,
         left_or_right: "left",
         row_id: 5,
         column_id: 9,
@@ -137,7 +137,7 @@ export default Ember.Controller.extend({
       var animationEleven = {
         name_of_unit:"swordsman",
         type_of_animation:"walk_forward",
-        number_of_frames:6,
+        number_of_frames:12,
         left_or_right: "left",
         row_id: 5,
         column_id: 10,
@@ -150,7 +150,7 @@ export default Ember.Controller.extend({
       var animationTwelve = {
         name_of_unit:"swordsman",
         type_of_animation:"walk_forward",
-        number_of_frames:6,
+        number_of_frames:12,
         left_or_right: "left",
         row_id: 5,
         column_id: 11,
@@ -163,7 +163,7 @@ export default Ember.Controller.extend({
       var animationThirteen = {
         name_of_unit:"swordsman",
         type_of_animation:"walk_forward",
-        number_of_frames:6,
+        number_of_frames:12,
         left_or_right: "left",
         row_id: 5,
         column_id: 12,
@@ -186,6 +186,150 @@ export default Ember.Controller.extend({
       }
 
       animationPackage.push(animationFourteen);
+
+      var animationFifteen = {
+        name_of_unit:"pikeman",
+        type_of_animation:"walk_forward",
+        number_of_frames:12,
+        left_or_right: "left",
+        row_id: 1,
+        column_id: 1,
+        starting_delay:500,
+        movement_modification:[8,17,25,34,43,52]
+      }
+
+      animationPackage.push(animationFifteen);
+
+      var animationSixteen = {
+        name_of_unit:"pikeman",
+        type_of_animation:"walk_forward",
+        number_of_frames:12,
+        left_or_right: "left",
+        row_id: 1,
+        column_id: 2,
+        starting_delay:1100,
+        movement_modification:[8,17,25,34,43,52]
+      }
+
+      animationPackage.push(animationSixteen);
+
+      var animationSeventeen = {
+        name_of_unit:"pikeman",
+        type_of_animation:"walk_forward",
+        number_of_frames:12,
+        left_or_right: "left",
+        row_id: 1,
+        column_id: 3,
+        starting_delay:1700,
+        movement_modification:[8,17,25,34,43,52]
+      }
+
+      animationPackage.push(animationSeventeen);
+
+      var animationEightteen = {
+        name_of_unit:"pikeman",
+        type_of_animation:"walk_forward",
+        number_of_frames:12,
+        left_or_right: "left",
+        row_id: 1,
+        column_id: 4,
+        starting_delay:2300,
+        movement_modification:[8,17,25,34,43,52]
+      }
+
+      animationPackage.push(animationEightteen);
+
+      var animationNineteen = {
+        name_of_unit:"pikeman",
+        type_of_animation:"static",
+        number_of_frames:1,
+        left_or_right: "left",
+        row_id: 1,
+        column_id: 5,
+        starting_delay:2900,
+        movement_modification:[0]
+      }
+
+      animationPackage.push(animationNineteen);
+
+      var animation20 = {
+        name_of_unit:"swordsman",
+        type_of_animation:"walk_forward",
+        number_of_frames:12,
+        left_or_right: "left",
+        row_id: 7,
+        column_id: 1,
+        starting_delay:500,
+        movement_modification:[8,17,25,34,43,52]
+      }
+
+      animationPackage.push(animation20);
+
+      var animation21 = {
+        name_of_unit:"swordsman",
+        type_of_animation:"walk_forward",
+        number_of_frames:12,
+        left_or_right: "left",
+        row_id: 7,
+        column_id: 2,
+        starting_delay:1100,
+        movement_modification:[8,17,25,34,43,52]
+      }
+
+      animationPackage.push(animation21);
+
+      var animation22 = {
+        name_of_unit:"swordsman",
+        type_of_animation:"walk_forward",
+        number_of_frames:12,
+        left_or_right: "left",
+        row_id: 7,
+        column_id: 3,
+        starting_delay:1700,
+        movement_modification:[8,17,25,34,43,52]
+      }
+
+      animationPackage.push(animation22);
+
+      var animation23 = {
+        name_of_unit:"swordsman",
+        type_of_animation:"walk_forward",
+        number_of_frames:12,
+        left_or_right: "left",
+        row_id: 7,
+        column_id: 4,
+        starting_delay:2300,
+        movement_modification:[8,17,25,34,43,52]
+      }
+
+      animationPackage.push(animation23);
+
+      var animation24 = {
+        name_of_unit:"swordsman",
+        type_of_animation:"walk_forward",
+        number_of_frames:12,
+        left_or_right: "left",
+        row_id: 7,
+        column_id: 5,
+        starting_delay:2900,
+        movement_modification:[8,17,25,34,43,52]
+      }
+
+      animationPackage.push(animation24);
+
+      var animation25 = {
+        name_of_unit:"swordsman",
+        type_of_animation:"static",
+        number_of_frames:1,
+        left_or_right: "left",
+        row_id: 7,
+        column_id: 6,
+        starting_delay:3500,
+        movement_modification:[0]
+      }
+
+      animationPackage.push(animation25);
+
 
       this.set('animationPackage',animationPackage)
     },

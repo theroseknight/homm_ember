@@ -2,6 +2,7 @@ import Ember from 'ember';
 
 export default Ember.Component.extend({
   classNames:["army-on-tile"],
+  animationCss:new Ember.Handlebars.SafeString(null),
   imageUrl:function(){
     if(this.get('rowId')===1 && this.get('columnId')===1){
       return this.get('battleService').get('leftArmyImageOne');
@@ -21,7 +22,7 @@ export default Ember.Component.extend({
       return this.get('battleService').get('rightArmyImageOne');
     }else if(this.get('rowId')===4 && this.get('columnId')===6){
       return this.get('battleService').get('rightArmyImageTwo');
-    }else if(this.get('rowId')===5 && this.get('columnId')===6){
+    }else if(this.get('rowId')===5 && this.get('columnId')===15){
       return this.get('battleService').get('rightArmyImageThree');
     }else if(this.get('rowId')===6 && this.get('columnId')===15){
       return this.get('battleService').get('rightArmyImageFour');
@@ -47,42 +48,6 @@ export default Ember.Component.extend({
       }
     })
   }),
-  derp:function(){
-    var component = this;
-    if(this.get('rowId')===1 && this.get('columnId')===1){
-      animate(this,"pikeman","hit",6,"left")
-    }else if(this.get('rowId')===3 && this.get('columnId')===1){
-      animate(this,"griffin","death",8,"left");
-    }else if(this.get('rowId')===4 && this.get('columnId')===1){
-      animate(this,"swordsman","attack",7,"left");
-    }else if(this.get('rowId')===5 && this.get('columnId')===1){
-      moveSixAnimations(this,"swordsman",1);
-    }else if(this.get('rowId')===5 && this.get('columnId')===2){
-      moveSixAnimations(this,"swordsman",2);
-    }else if(this.get('rowId')===5 && this.get('columnId')===3){
-      moveSixAnimations(this,"swordsman",3);
-    }else if(this.get('rowId')===5 && this.get('columnId')===4){
-      moveSixAnimations(this,"swordsman",4);
-    }else if(this.get('rowId')===5 && this.get('columnId')===5){
-      moveSixAnimations(this,"swordsman",5);
-      Ember.run.later((function() {
-        animate(component,"swordsman","attack",7,"left");
-      }), 2900);
-      Ember.run.later((function() {
-        animate(component,"swordsman","hit_by_melee",6,"left");
-      }), 3900);
-    }else if(this.get('rowId')===5 && this.get('columnId')===6){
-      Ember.run.later((function() {
-        animate(component,"swordsman","death",6,"right");
-      }), 2900);
-    }else if(this.get('rowId')===4 && this.get('columnId')===6){
-      Ember.run.later((function() {
-        animate(component,"swordsman","attack_down",5,"right");
-      }), 3900);
-    }else{
-      return "";
-    }
-  },
   stackSize:function(){
     if(this.get('rowId')===1 && this.get('columnId')===1){
       return this.get('battleService').get('leftArmySizeOne');
