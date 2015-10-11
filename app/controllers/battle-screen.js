@@ -17,6 +17,18 @@ export default Ember.Controller.extend({
 
       animationPackage.push(animationOne);
 
+      var animationOnee = {
+        name_of_unit:"griffin",
+        type_of_animation:"death",
+        number_of_frames:8,
+        left_or_right: "left",
+        row_id: 3,
+        column_id: 1,
+        starting_delay:500,
+      }
+
+      animationPackage.push(animationOnee);
+
       var animationTwo = {
         name_of_unit:"swordsman",
         type_of_animation:"walk_forward",
@@ -25,7 +37,6 @@ export default Ember.Controller.extend({
         row_id: 5,
         column_id: 1,
         starting_delay:500,
-        movement_modification:[8,17,25,34,43,52]
       }
 
       animationPackage.push(animationTwo);
@@ -38,7 +49,6 @@ export default Ember.Controller.extend({
         row_id: 5,
         column_id: 2,
         starting_delay:1100,
-        movement_modification:[8,17,25,34,43,52]
       }
 
       animationPackage.push(animationThree);
@@ -51,7 +61,6 @@ export default Ember.Controller.extend({
         row_id: 5,
         column_id: 3,
         starting_delay:1700,
-        movement_modification:[8,17,25,34,43,52]
       }
 
       animationPackage.push(animationFour);
@@ -64,7 +73,6 @@ export default Ember.Controller.extend({
         row_id: 5,
         column_id: 4,
         starting_delay:2300,
-        movement_modification:[8,17,25,34,43,52]
       }
 
       animationPackage.push(animationFive);
@@ -77,7 +85,6 @@ export default Ember.Controller.extend({
         row_id: 5,
         column_id: 5,
         starting_delay:2900,
-        movement_modification:[8,17,25,34,43,52]
       }
 
       animationPackage.push(animationSix);
@@ -90,7 +97,6 @@ export default Ember.Controller.extend({
         row_id: 5,
         column_id: 6,
         starting_delay:3500,
-        movement_modification:[8,17,25,34,43,52]
       }
 
       animationPackage.push(animationSeven);
@@ -103,7 +109,6 @@ export default Ember.Controller.extend({
         row_id: 5,
         column_id: 7,
         starting_delay:4100,
-        movement_modification:[8,17,25,34,43,52]
       }
 
       animationPackage.push(animationEight);
@@ -116,7 +121,6 @@ export default Ember.Controller.extend({
         row_id: 5,
         column_id: 8,
         starting_delay:4700,
-        movement_modification:[8,17,25,34,43,52]
       }
 
       animationPackage.push(animationNine);
@@ -129,7 +133,6 @@ export default Ember.Controller.extend({
         row_id: 5,
         column_id: 9,
         starting_delay:5300,
-        movement_modification:[8,17,25,34,43,52]
       }
 
       animationPackage.push(animationTen);
@@ -142,7 +145,6 @@ export default Ember.Controller.extend({
         row_id: 5,
         column_id: 10,
         starting_delay:5900,
-        movement_modification:[8,17,25,34,43,52]
       }
 
       animationPackage.push(animationEleven);
@@ -155,7 +157,6 @@ export default Ember.Controller.extend({
         row_id: 5,
         column_id: 11,
         starting_delay:6500,
-        movement_modification:[8,17,25,34,43,52]
       }
 
       animationPackage.push(animationTwelve);
@@ -168,7 +169,6 @@ export default Ember.Controller.extend({
         row_id: 5,
         column_id: 12,
         starting_delay:7100,
-        movement_modification:[8,17,25,34,43,52]
       }
 
       animationPackage.push(animationThirteen);
@@ -182,7 +182,6 @@ export default Ember.Controller.extend({
         row_id: 5,
         column_id: 13,
         starting_delay:7700,
-        movement_modification:[0]
       }
 
       animationPackage.push(animationFourteen);
@@ -195,7 +194,6 @@ export default Ember.Controller.extend({
         row_id: 1,
         column_id: 1,
         starting_delay:500,
-        movement_modification:[8,17,25,34,43,52]
       }
 
       animationPackage.push(animationFifteen);
@@ -208,7 +206,6 @@ export default Ember.Controller.extend({
         row_id: 1,
         column_id: 2,
         starting_delay:1100,
-        movement_modification:[8,17,25,34,43,52]
       }
 
       animationPackage.push(animationSixteen);
@@ -221,7 +218,6 @@ export default Ember.Controller.extend({
         row_id: 1,
         column_id: 3,
         starting_delay:1700,
-        movement_modification:[8,17,25,34,43,52]
       }
 
       animationPackage.push(animationSeventeen);
@@ -234,7 +230,6 @@ export default Ember.Controller.extend({
         row_id: 1,
         column_id: 4,
         starting_delay:2300,
-        movement_modification:[8,17,25,34,43,52]
       }
 
       animationPackage.push(animationEightteen);
@@ -247,7 +242,6 @@ export default Ember.Controller.extend({
         row_id: 1,
         column_id: 5,
         starting_delay:2900,
-        movement_modification:[0]
       }
 
       animationPackage.push(animationNineteen);
@@ -260,7 +254,6 @@ export default Ember.Controller.extend({
         row_id: 7,
         column_id: 1,
         starting_delay:500,
-        movement_modification:[8,17,25,34,43,52]
       }
 
       animationPackage.push(animation20);
@@ -273,7 +266,6 @@ export default Ember.Controller.extend({
         row_id: 7,
         column_id: 2,
         starting_delay:1100,
-        movement_modification:[8,17,25,34,43,52]
       }
 
       animationPackage.push(animation21);
@@ -286,7 +278,6 @@ export default Ember.Controller.extend({
         row_id: 7,
         column_id: 3,
         starting_delay:1700,
-        movement_modification:[8,17,25,34,43,52]
       }
 
       animationPackage.push(animation22);
@@ -299,7 +290,6 @@ export default Ember.Controller.extend({
         row_id: 7,
         column_id: 4,
         starting_delay:2300,
-        movement_modification:[8,17,25,34,43,52]
       }
 
       animationPackage.push(animation23);
@@ -312,23 +302,71 @@ export default Ember.Controller.extend({
         row_id: 7,
         column_id: 5,
         starting_delay:2900,
-        movement_modification:[8,17,25,34,43,52]
       }
 
       animationPackage.push(animation24);
 
       var animation25 = {
         name_of_unit:"swordsman",
+        type_of_animation:"walk_down",
+        number_of_frames:12,
+        left_or_right:"left",
+        row_id: 7,
+        column_id: 6,
+        starting_delay:3500,
+      }
+
+      animationPackage.push(animation25);
+
+      var animation26 = {
+        name_of_unit:"swordsman",
+        type_of_animation:"walk_forward",
+        number_of_frames:12,
+        left_or_right:"left",
+        row_id: 8,
+        column_id: 7,
+        starting_delay:4100,
+      }
+
+      animationPackage.push(animation26);
+
+      var animation27 = {
+        name_of_unit:"swordsman",
+        type_of_animation:"walk_up",
+        number_of_frames:12,
+        left_or_right:"left",
+        row_id: 8,
+        column_id: 8,
+        starting_delay:4700,
+      }
+
+      animationPackage.push(animation27);
+
+      var animation28 = {
+        name_of_unit:"swordsman",
+        type_of_animation:"walk_forward",
+        number_of_frames:12,
+        left_or_right:"left",
+        row_id: 7,
+        column_id: 8,
+        starting_delay:5300,
+      }
+
+      animationPackage.push(animation28);
+
+      var animation29 = {
+        name_of_unit:"swordsman",
         type_of_animation:"static",
         number_of_frames:1,
         left_or_right: "left",
         row_id: 7,
-        column_id: 6,
-        starting_delay:3500,
-        movement_modification:[0]
+        column_id: 9,
+        starting_delay:5900,
       }
 
-      animationPackage.push(animation25);
+      animationPackage.push(animation29);
+
+
 
 
       this.set('animationPackage',animationPackage)
