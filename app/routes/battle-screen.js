@@ -17,127 +17,19 @@ export default Ember.Route.extend({
     var leftHeroImageUrl = model.mainHero.get('battlePortraitUrl');
     var rightHeroImageUrl = model.opposingHero.get('battlePortraitUrl');
 
-    var opposingArmyImageUrlArray = [];
-    var opposingArmySizeArray = [];
-    var creatureImageUrlArray = [];
-    var creatureSizeArray = [];
-
+    //Ensure we have loaded models for each active creature in the battle
     var loadedOpposingArmyArray = [];
     var loadedCreatureArray = [];
-
-
     model.opposingArmy.forEach(function(creature){
       loadedOpposingArmyArray.push(creature);
-      opposingArmyImageUrlArray.push("right/" + creature.get('imageUrl'))
-      opposingArmySizeArray.push(creature.get('stackSize'))
     })
     model.creatures.forEach(function(creature){
       loadedCreatureArray.push(creature);
-      creatureImageUrlArray.push(creature.get('imageUrl'))
-      creatureSizeArray.push(creature.get('stackSize'))
     })
-
-    var leftCreatureOne = loadedCreatureArray[0]
-    var leftCreatureTwo = loadedCreatureArray[1]
-    var leftCreatureThree = loadedCreatureArray[2]
-    var leftCreatureFour = loadedCreatureArray[3]
-    var leftCreatureFive = loadedCreatureArray[4]
-    var leftCreatureSix = loadedCreatureArray[5]
-    var leftCreatureSeven = loadedCreatureArray[6]
-
-    var rightCreatureOne = loadedOpposingArmyArray[0]
-    var rightCreatureTwo = loadedOpposingArmyArray[1]
-    var rightCreatureThree = loadedOpposingArmyArray[2]
-    var rightCreatureFour = loadedOpposingArmyArray[3]
-    var rightCreatureFive = loadedOpposingArmyArray[4]
-    var rightCreatureSix = loadedOpposingArmyArray[5]
-    var rightCreatureSeven = loadedOpposingArmyArray[6]
-
-
-    var leftArmyOne = creatureImageUrlArray[0]
-    var leftArmyTwo = creatureImageUrlArray[1]
-    var leftArmyThree = creatureImageUrlArray[2]
-    var leftArmyFour = creatureImageUrlArray[3]
-    var leftArmyFive = creatureImageUrlArray[4]
-    var leftArmySix = creatureImageUrlArray[5]
-    var leftArmySeven = creatureImageUrlArray[6]
-
-    var rightArmyOne = opposingArmyImageUrlArray[0]
-    var rightArmyTwo = opposingArmyImageUrlArray[1]
-    var rightArmyThree = opposingArmyImageUrlArray[2]
-    var rightArmyFour = opposingArmyImageUrlArray[3]
-    var rightArmyFive = opposingArmyImageUrlArray[4]
-    var rightArmySix = opposingArmyImageUrlArray[5]
-    var rightArmySeven = opposingArmyImageUrlArray[6]
-
-    var leftStackOne = creatureSizeArray[0]
-    var leftStackTwo = creatureSizeArray[1]
-    var leftStackThree = creatureSizeArray[2]
-    var leftStackFour = creatureSizeArray[3]
-    var leftStackFive = creatureSizeArray[4]
-    var leftStackSix = creatureSizeArray[5]
-    var leftStackSeven = creatureSizeArray[6]
-
-    var rightStackOne = opposingArmySizeArray[0]
-    var rightStackTwo = opposingArmySizeArray[1]
-    var rightStackThree = opposingArmySizeArray[2]
-    var rightStackFour = opposingArmySizeArray[3]
-    var rightStackFive = opposingArmySizeArray[4]
-    var rightStackSix = opposingArmySizeArray[5]
-    var rightStackSeven = opposingArmySizeArray[6]
-
 
     route.get('battleService').set('showHexagon',showHexagon);
     route.get('battleService').set('leftHeroImageUrl',leftHeroImageUrl);
     route.get('battleService').set('rightHeroImageUrl',rightHeroImageUrl);
-
-    route.get('battleService').set('leftArmyImageOne',leftArmyOne);
-    route.get('battleService').set('leftArmyImageTwo',leftArmyTwo);
-    route.get('battleService').set('leftArmyImageThree',leftArmyThree);
-    route.get('battleService').set('leftArmyImageFour',leftArmyFour);
-    route.get('battleService').set('leftArmyImageFive',leftArmyFive);
-    route.get('battleService').set('leftArmyImageSix',leftArmyFour);
-    route.get('battleService').set('leftArmyImageSeven',leftArmyFive);
-
-    route.get('battleService').set('rightArmyImageOne',rightArmyOne);
-    route.get('battleService').set('rightArmyImageTwo',rightArmyTwo);
-    route.get('battleService').set('rightArmyImageThree',rightArmyThree);
-    route.get('battleService').set('rightArmyImageFour',rightArmyFour);
-    route.get('battleService').set('rightArmyImageFive',rightArmyFive);
-    route.get('battleService').set('rightArmyImageSix',rightArmySix);
-    route.get('battleService').set('rightArmyImageSeven',rightArmySeven);
-
-    route.get('battleService').set('leftArmySizeOne',leftStackOne);
-    route.get('battleService').set('leftArmySizeTwo',leftStackTwo);
-    route.get('battleService').set('leftArmySizeThree',leftStackThree);
-    route.get('battleService').set('leftArmySizeFour',leftStackFour);
-    route.get('battleService').set('leftArmySizeFive',leftStackFive);
-    route.get('battleService').set('leftArmySizeFive',leftStackSix);
-    route.get('battleService').set('leftArmySizeSix',leftStackSeven);
-
-    route.get('battleService').set('leftCreatureOne',leftCreatureOne);
-    route.get('battleService').set('leftCreatureTwo',leftCreatureTwo);
-    route.get('battleService').set('leftCreatureThree',leftCreatureThree);
-    route.get('battleService').set('leftCreatureFour',leftCreatureFour);
-    route.get('battleService').set('leftCreatureFive',leftCreatureFive);
-    route.get('battleService').set('leftCreatureSix',leftCreatureSix);
-    route.get('battleService').set('leftCreatureSeven',leftCreatureSeven);
-
-    route.get('battleService').set('rightCreatureOne',rightCreatureOne);
-    route.get('battleService').set('rightCreatureTwo',rightCreatureTwo);
-    route.get('battleService').set('rightCreatureThree',rightCreatureThree);
-    route.get('battleService').set('rightCreatureFour',rightCreatureFour);
-    route.get('battleService').set('rightCreatureFive',rightCreatureFive);
-    route.get('battleService').set('rightCreatureSix',rightCreatureSix);
-    route.get('battleService').set('rightCreatureSeven',rightCreatureSeven);
-
-    route.get('battleService').set('rightArmySizeOne',rightStackOne);
-    route.get('battleService').set('rightArmySizeTwo',rightStackTwo);
-    route.get('battleService').set('rightArmySizeThree',rightStackThree);
-    route.get('battleService').set('rightArmySizeFour',rightStackFour);
-    route.get('battleService').set('rightArmySizeFive',rightStackFive);
-    route.get('battleService').set('rightArmySizeSix',rightStackSix);
-    route.get('battleService').set('rightArmySizeSeven',rightStackSeven);
 
     route.get('battleService').set('leftSideCreatures',loadedCreatureArray);
     route.get('battleService').set('rightSideCreatures',loadedOpposingArmyArray);
@@ -148,8 +40,14 @@ export default Ember.Route.extend({
   },
   actions:{
     theBattleLoop:function(){
-      console.log("here we go")
-      console.log(this.get('battleService').get('initiativeArray'))
+      //Step 1 - Set up the starting armies on the board
+      var animationPackage = animateStartingArmies(this.get('battleService').get('leftSideCreatures'),this.get('battleService').get('rightSideCreatures'),this)
+      this.controllerFor('battleScreen').set('animationPackage',animationPackage);
+      //Step 2 - Determine which creature goes first
+      var startingCreature = this.get('battleService').get('initiativeArray')[0]
+      console.log(this.get('battleService'))
+      //LEFT OFF HERE CREATE THE INITIAL BLOCKED HEXES AS ALL HEXES THAT TURN ONE CREATURE CAN NOT REACH, THEN HIGHLIGHT THE ONES HE CAN REACH to SIMULATE HIS TURN
+      var initialBlockedHexes = createBlockedHexesPackage(this.get(''))
     },
     transistionSection:function(link){
       var route = this;

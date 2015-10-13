@@ -7,6 +7,21 @@ export default Ember.Service.extend({
   rightSideCreatures:null,
   showHexagon:null,
   arrayOfBattleHexes: [],
+  blockedHexes: [],
+  leftArmy1CurrentPosition:null,
+  leftArmy2CurrentPosition:null,
+  leftArmy3CurrentPosition:null,
+  leftArmy4CurrentPosition:null,
+  leftArmy5CurrentPosition:null,
+  leftArmy6CurrentPosition:null,
+  leftArmy7CurrentPosition:null,
+  rightArmy1CurrentPosition:null,
+  rightArmy2CurrentPosition:null,
+  rightArmy3CurrentPosition:null,
+  rightArmy4CurrentPosition:null,
+  rightArmy5CurrentPosition:null,
+  rightArmy6CurrentPosition:null,
+  rightArmy7CurrentPosition:null,  
   hexOptionObserver:Ember.observer("showHexagon",function(){
     if(this.get('showHexagon') === true){
       $(".game-board-hexagon").addClass("hexagon-toggle-on").removeClass('hexagon-toggle-off');

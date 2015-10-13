@@ -9,6 +9,53 @@
 //number: the number of images that we have for the animation
 
 
+function animateStartingArmies(leftArmy,rightArmy,route){
+  leftPositionCounter = 0;
+  rightPositionCounter = 0;
+  leftRowIdArray = [1,3,5,7,9,11];
+  rightRowIdArray = [1,3,5,6,7,9,11]
+
+  var animationPackage = [];
+
+  leftArmy.forEach(function(creature,index){
+    animation = {
+      name_of_unit:creature.get('name').toLowerCase(),
+      type_of_animation:"static",
+      number_of_frames:1,
+      left_or_right:"left",
+      row_id:leftRowIdArray[leftPositionCounter],
+      column_id:1,
+      starting_delay:0
+    }
+
+    route.get('battleService').set('leftArmy' + index + 'CurrentPosition',{row:leftRowIdArray[leftPositionCounter],column:1})
+
+    animationPackage.push(animation);
+
+    leftPositionCounter += 1;
+  })
+
+  rightArmy.forEach(function(creature, index){
+    animation = {
+      name_of_unit:creature.get('name').toLowerCase(),
+      type_of_animation:"static",
+      number_of_frames:1,
+      left_or_right:"right",
+      row_id:rightRowIdArray[rightPositionCounter],
+      column_id:15,
+      starting_delay:0
+    }
+
+    route.get('battleService').set('rightArmy' + index + 'CurrentPosition',{row:rightRowIdArray[rightPositionCounter],column:1})
+
+    animationPackage.push(animation)
+
+    rightPositionCounter += 1;
+  })
+
+  return animationPackage;
+}
+
 function animate(component,name,type,number,leftOrRight,startingDelay){
   //Step 1 - Create the URL path to the images that will be cycled through to create the animation
   var urlHeader;
@@ -30,7 +77,6 @@ function animate(component,name,type,number,leftOrRight,startingDelay){
     halfMovementModifiers =  [2,4, 6, 8,10,12,14,17,19,21,23,26]
   }
 
-
   //Step 3 - The starting array is needed in order to access a looping index inside of the Ember.run.later that holds its incremented value at the time of function initiation rather than call
   var startingArray = Array(number).join(0).split(0).map(Number.call, Number);
 
@@ -39,7 +85,7 @@ function animate(component,name,type,number,leftOrRight,startingDelay){
     Ember.run.later((function() {
       var innerNumber = index + 1;
       if((type==="walk_forward" || type==="walk_down" || type==="walk_up") && innerNumber === number && innerNumber !== 1){
-        component.set('imageUrl',"blank.png")
+        component.set('imageUrl',"")
       }else{
         component.set('imageUrl',urlHeader + name + "_" + type + "/" + innerNumber +".png");
       }
