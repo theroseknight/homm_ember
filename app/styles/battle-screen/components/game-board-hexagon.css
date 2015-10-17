@@ -23,7 +23,7 @@
 }
 
 .hexagon-toggle-on .hexagon-holder {
-  opacity: .4;
+  opacity: .3;
 }
 
 .hexagon-toggle-off .hexagon-holder {
@@ -36,4 +36,8 @@
 
 .hexagon-toggle-off .hexagon-holder:hover {
   opacity: 1;
+}
+
+.hexagon-player-reachable .hexagon-holder {
+  opacity: .6;
 }

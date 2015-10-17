@@ -44,7 +44,7 @@ function animateStartingArmies(leftArmy,rightArmy,route){
       row_id:rightRowIdArray[rightPositionCounter],
       column_id:15,
       starting_delay:0
-    }
+    }    
 
     route.get('battleService').set('rightArmy' + index + 'CurrentPosition',{row:rightRowIdArray[rightPositionCounter],column:1})
 

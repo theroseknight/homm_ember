@@ -2,14 +2,14 @@
   <div id="bs-fixed-size-background">
     <div id="battle-screen-main-portion">
       <div id="battle-screen-game-board">
-        {{battle-screen/game-board  animationPackage=animationPackage}}
+        {{battle-screen/game-board  animationPackage=animationPackage  statusPackage=statusPackage}}
       </div>
     </div>
     <div id="battle-screen-footer-portion">
       {{battle-screen/turn-slider/main-container }}
     </div>
     <div {{action "setAnimationPackage" }} class="btn btn-success">Launch Animation</div><br>
-    <div {{action "transistionSection" "/" }} class="btn btn-success">Loading Screen</div><br>    
+    <div {{action "transistionSection" "/" }} class="btn btn-success">Loading Screen</div><br>
     {{battle-screen/options-menu toggleStatus=battleService.showHexagon}}
   </div>
 </div>

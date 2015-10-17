@@ -47,7 +47,8 @@ export default Ember.Route.extend({
       var startingCreature = this.get('battleService').get('initiativeArray')[0]
       console.log(this.get('battleService'))
       //LEFT OFF HERE CREATE THE INITIAL BLOCKED HEXES AS ALL HEXES THAT TURN ONE CREATURE CAN NOT REACH, THEN HIGHLIGHT THE ONES HE CAN REACH to SIMULATE HIS TURN
-      var initialBlockedHexes = createBlockedHexesPackage(this.get(''))
+      var initialBlockedHexes = createBlockedHexesPackage();
+      this.controllerFor('battleScreen').set('statusPackage',initialBlockedHexes);
     },
     transistionSection:function(link){
       var route = this;
